@@ -61,15 +61,34 @@ public class VirtualPet {
 			return "Hydrated";
 		}
 	}
-	
-//	public void setDispo(int i) {
-//		dispo = i;
-//	}
-//	
-//	public int getDispo() {
-//		return dispo;
-//	}
-//	
+	public String selfServe() {
+		dispo -= 10;
+		if ((hunger > (50 - energy)) || (thirst > (50 - energy))){
+			if (hunger > thirst) {
+				return "hungry";
+			}
+			else {
+				return "thirsty";
+			}
+		}
+		else {
+			return "tired";
+		}
+	}
+	public String getDispo() {
+		if (dispo > 39 && dispo < 50) { // 40 to 49
+			return "Loved";
+		}
+		else if (dispo > 10 && dispo < 40) { // 11 to 39
+			return "Liked";
+		}
+		else if (dispo < 0) { // 50+
+			return "Ran Away";
+		}
+		else { // 0 to 10
+			return "Hated";
+		}
+	}
 //	public void setEnergy(int i) {
 //		energy = i;
 //	}
