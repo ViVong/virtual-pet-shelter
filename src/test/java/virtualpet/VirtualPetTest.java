@@ -8,4 +8,6 @@ public class VirtualPetTest {
 	public void createVirtualPet() {
 		VirtualPet dog = new VirtualPet();
 	}
+	
+	
 }
