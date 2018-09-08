@@ -5,6 +5,7 @@ public class VirtualPet {
 //Name, Type of Animal, Hunger, Thirst, Disposition, Energy
 //Let (Name) Decide, Energy Determines Rebellion, Abandon Pet.
 
+	//Initializing Public & Private Variables
 	public String name = "<Default>";
 	public String animal = "<Animal>";
 	private int hunger = 20;
@@ -12,6 +13,7 @@ public class VirtualPet {
 	private int dispo = 25;
 	private int energy = 50;
 	
+	//Constructor with & without input
 	public VirtualPet() {
 	}
 	
@@ -20,6 +22,7 @@ public class VirtualPet {
 		animal = Pet;
 	}
 	
+	//Decreases hunger & Outputs verbally hunger
 	public void feedPet(int i) {
 		hunger -= i;
 	}
@@ -39,14 +42,26 @@ public class VirtualPet {
 		}
 	}
 
-//	public void giveWater() {
-//		thirst -= 10;
-//	}
-//	
-//	public int getThirst() {
-//		return thirst;
-//	}
-//	
+	//Decreases thirst by 5 & Verbally outputs thirst
+	public void giveWater() {
+		thirst -= 10;
+	}
+	
+	public String getThirst() {
+		if (thirst > 39 && thirst < 50) { // 40 to 49
+			return "Dehydrated";
+		}
+		else if (thirst > 10 && thirst < 40) { // 11 to 39
+			return "Thirsty";
+		}
+		else if (thirst > 49) { // 50+
+			return "Dead";
+		}
+		else { // 0 to 10
+			return "Hydrated";
+		}
+	}
+	
 //	public void setDispo(int i) {
 //		dispo = i;
 //	}
@@ -65,10 +80,10 @@ public class VirtualPet {
 	
 	public void tick() {
 		if (hunger > 0) {
-			hunger -= 5;
+			hunger += 3;
 		}
 		if (thirst > 0) {
-			thirst -= 5;
+			thirst += 5;
 		}
 		if (dispo < 50) {
 			dispo -= 5;

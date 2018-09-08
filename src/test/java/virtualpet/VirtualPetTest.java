@@ -29,4 +29,14 @@ public class VirtualPetTest {
 		dog.feedPet(40); //Sets hunger to 10
 		assertTrue(dog.getHunger().equals("Full"));
 	}
+	
+	@Test
+	public void setThenGetThirst() {
+		VirtualPet dog = new VirtualPet();
+		assertTrue(dog.getThirst().equals("Thirsty"));
+		dog.tick(); dog.tick(); dog.tick(); dog.tick(); //Sets thirst to 40
+		assertTrue(dog.getThirst().equals("Dehydrated"));
+		dog.giveWater(); dog.giveWater(); dog.giveWater(); //Sets thirst to 10
+		assertTrue(dog.getThirst().equals("Hydrated"));
+	}
 }
