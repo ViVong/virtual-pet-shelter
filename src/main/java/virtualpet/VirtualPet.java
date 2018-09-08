@@ -5,8 +5,8 @@ public class VirtualPet {
 //Name, Type of Animal, Hunger, Thirst, Disposition, Energy
 //Let (Name) Decide, Energy Determines Rebellion, Abandon Pet.
 
-	private String name = "<Default>";
-	private String animal = "<Animal>";
+	public String name = "<Default>";
+	public String animal = "<Animal>";
 	private int hunger = 50;
 	private int thirst = 50;
 	private int dispo = 25;
@@ -15,8 +15,9 @@ public class VirtualPet {
 	public VirtualPet() {
 	}
 	
-	public VirtualPet(String Name) {
-		
+	public VirtualPet(String Name, String Pet) {
+		name = Name;
+		animal = Pet;
 	}
 
 }
