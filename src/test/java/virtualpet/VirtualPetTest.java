@@ -17,4 +17,12 @@ public class VirtualPetTest {
 		assertTrue(dog.name.equals("Fido"));
 		assertTrue(dog.animal.equals("Dog"));
 	}
+	
+	@Test
+	public void setThenGetHunger() {
+		VirtualPet dog = new VirtualPet();
+		assertTrue(dog.getHunger()==50);
+		dog.setHunger(25);
+		assertTrue(dog.getHunger()==25);
+	}
 }

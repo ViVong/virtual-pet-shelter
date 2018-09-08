@@ -19,6 +19,14 @@ public class VirtualPet {
 		name = Name;
 		animal = Pet;
 	}
+	
+	public void setHunger(int i) {
+		hunger = i;
+	}
+	
+	public int getHunger() {
+		return hunger;
+	}
 
 }
 
