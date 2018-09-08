@@ -21,8 +21,12 @@ public class VirtualPetTest {
 	@Test
 	public void setThenGetHunger() {
 		VirtualPet dog = new VirtualPet();
-		assertTrue(dog.getHunger()==50);
-		dog.setHunger(25);
-		assertTrue(dog.getHunger()==25);
+		assertTrue(dog.getHunger().equals("Hungry"));
+		dog.feedPet(-20); //Sets hunger to 40
+		assertTrue(dog.getHunger().equals("Starving"));
+		dog.feedPet(-10); //Sets hunger to 50
+		assertTrue(dog.getHunger().equals("Dead"));
+		dog.feedPet(40); //Sets hunger to 10
+		assertTrue(dog.getHunger().equals("Full"));
 	}
 }
