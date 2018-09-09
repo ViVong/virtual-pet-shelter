@@ -25,6 +25,7 @@ public class VirtualPet {
 	//Decreases hunger & Outputs verbally hunger
 	public void feedPet(int i) {
 		hunger -= i;
+		dispo += (i/2);
 	}
 	
 	public String getHunger() {
@@ -65,9 +66,11 @@ public class VirtualPet {
 		dispo -= 10;
 		if ((hunger > (50 - energy)) || (thirst > (50 - energy))){
 			if (hunger > thirst) {
+				feedPet(5);
 				return "hungry";
 			}
 			else {
+				giveWater();
 				return "thirsty";
 			}
 		}
@@ -76,7 +79,7 @@ public class VirtualPet {
 		}
 	}
 	public String getDispo() {
-		if (dispo > 0 && dispo < 11) { // 1 to 11
+		if (dispo > 0 && dispo < 11) { // 1 to 10
 			return "Hated";
 		}
 		else if (dispo > 10 && dispo < 40) { // 11 to 39
@@ -89,10 +92,10 @@ public class VirtualPet {
 			return "Loved";
 		}
 	}
-//	public void setEnergy(int i) {
-//		energy = i;
-//	}
-//	
+	public void takeNap(int i) {
+		energy = i;
+	}
+	
 //	public int getEnergy() {
 //		return energy;
 //	}

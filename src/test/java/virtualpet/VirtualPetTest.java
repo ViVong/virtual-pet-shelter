@@ -39,4 +39,18 @@ public class VirtualPetTest {
 		dog.giveWater(); dog.giveWater(); dog.giveWater(); //Sets thirst to 10
 		assertTrue(dog.getThirst().equals("Hydrated"));
 	}
+	
+	@Test
+	public void setThenGetDispo() {
+		VirtualPet dog = new VirtualPet();
+		assertTrue(dog.getDispo().equals("Liked"));
+		dog.selfServe();
+		assertTrue(dog.getThirst().equals("Hydrated")); //Checks if self detected thirst as lowest value
+		dog.selfServe();
+		assertTrue(dog.getDispo().equals("Hated"));
+		dog.selfServe();
+		assertTrue(dog.getHunger().equals("Full"));
+		dog.feedPet(100);
+		assertTrue(dog.getDispo().equals("Loved"));
+	}
 }
