@@ -26,6 +26,7 @@ public class VirtualPet {
 	public void feedPet(int i) {
 		hunger -= i;
 		dispo += (i/2);
+		energy += 10;
 	}
 	
 	public String getHunger() {
@@ -46,6 +47,7 @@ public class VirtualPet {
 	//Decreases thirst by 5 & Verbally outputs thirst
 	public void giveWater() {
 		thirst -= 10;
+		energy += 5;
 	}
 	
 	public String getThirst() {
@@ -93,12 +95,21 @@ public class VirtualPet {
 		}
 	}
 	public void takeNap(int i) {
-		energy = i;
+		energy -= (i*5);
 	}
 	
-//	public int getEnergy() {
-//		return energy;
-//	}
+	public String getEnergy() {
+	if (energy < 11) { // 1 to 10
+		return "Tired";
+	}
+	else if (energy > 10 && energy < 40) { // 11 to 39
+		return "Active";
+	}
+	else { //40 to 50
+		return "Hyper";
+	}
+	
+}
 	
 	public void tick() {
 		if (hunger > 0) {
@@ -107,11 +118,11 @@ public class VirtualPet {
 		if (thirst > 0) {
 			thirst += 5;
 		}
-		if (dispo < 50) {
-			dispo -= 5;
+		if (energy > 50) {
+			energy = 50;
 		}
-		if (energy < 50) {
-			energy -= 5;
+		if (energy < 0) {
+			energy = 0;
 		}
 	}
 }
