@@ -94,8 +94,12 @@ public class VirtualPet {
 			return "Loved";
 		}
 	}
+	
 	public void takeNap(int i) {
-		energy -= (i*5);
+		for (int x = i; x!= 0; x--) {
+			energy -= 5;
+			tick();
+		}
 	}
 	
 	public String getEnergy() {

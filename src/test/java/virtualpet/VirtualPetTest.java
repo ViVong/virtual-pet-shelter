@@ -53,4 +53,15 @@ public class VirtualPetTest {
 		dog.feedPet(100);
 		assertTrue(dog.getDispo().equals("Loved"));
 	}
+	
+	@Test
+	public void setThenGetEnergy() {
+		VirtualPet dog = new VirtualPet();
+		assertTrue(dog.getEnergy().equals("Hyper"));
+		dog.takeNap(4);
+		assertTrue(dog.getEnergy().equals("Active"));
+		dog.takeNap(6);
+		assertTrue(dog.getEnergy().equals("Tired"));
+	}
+	
 }
