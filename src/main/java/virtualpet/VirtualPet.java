@@ -76,17 +76,17 @@ public class VirtualPet {
 		}
 	}
 	public String getDispo() {
-		if (dispo > 39 && dispo < 50) { // 40 to 49
-			return "Loved";
+		if (dispo > 0 && dispo < 11) { // 1 to 11
+			return "Hated";
 		}
 		else if (dispo > 10 && dispo < 40) { // 11 to 39
 			return "Liked";
 		}
-		else if (dispo < 0) { // 50+
+		else if (dispo < 1) { // 0-
 			return "Ran Away";
 		}
-		else { // 0 to 10
-			return "Hated";
+		else { //40 to 50
+			return "Loved";
 		}
 	}
 //	public void setEnergy(int i) {
