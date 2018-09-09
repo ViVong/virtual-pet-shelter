@@ -44,11 +44,11 @@ public class VirtualPetTest {
 	public void setThenGetDispo() {
 		VirtualPet dog = new VirtualPet();
 		assertTrue(dog.getDispo().equals("Liked"));
-		dog.selfServe();
-		assertTrue(dog.getThirst().equals("Hydrated")); //Checks if self detected thirst as lowest value
-		dog.selfServe();
+		dog.selfServe(); //Thirst should be lowest value
+		assertTrue(dog.getThirst().equals("Hydrated"));
+		dog.selfServe(); //Hunger should be lowest value
 		assertTrue(dog.getDispo().equals("Hated"));
-		dog.selfServe();
+		dog.selfServe(); //Hunger should be lowest value
 		assertTrue(dog.getHunger().equals("Full"));
 		dog.feedPet(100);
 		assertTrue(dog.getDispo().equals("Loved"));
@@ -58,9 +58,9 @@ public class VirtualPetTest {
 	public void setThenGetEnergy() {
 		VirtualPet dog = new VirtualPet();
 		assertTrue(dog.getEnergy().equals("Hyper"));
-		dog.takeNap(4);
+		dog.takeNap(4); //Sets energy to 30
 		assertTrue(dog.getEnergy().equals("Active"));
-		dog.takeNap(6);
+		dog.takeNap(6); //Sets energy to 0
 		assertTrue(dog.getEnergy().equals("Tired"));
 	}
 	

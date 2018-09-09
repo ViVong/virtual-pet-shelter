@@ -11,7 +11,7 @@ public class VirtualPet {
 	private int hunger = 20;
 	private int thirst = 20;
 	private int dispo = 25;
-	private int energy = 50;
+	private int energy = 20;
 	
 	//Constructor with & without input
 	public VirtualPet() {
@@ -26,7 +26,7 @@ public class VirtualPet {
 	public void feedPet(int i) {
 		hunger -= i;
 		dispo += (i/2);
-		energy += 10;
+		energy -= 5;
 	}
 	
 	public String getHunger() {
@@ -47,7 +47,7 @@ public class VirtualPet {
 	//Decreases thirst by 5 & Verbally outputs thirst
 	public void giveWater() {
 		thirst -= 10;
-		energy += 5;
+		energy -= 5;
 	}
 	
 	public String getThirst() {
@@ -82,10 +82,10 @@ public class VirtualPet {
 	}
 	public String getDispo() {
 		if (dispo > 0 && dispo < 11) { // 1 to 10
-			return "Hated";
+			return "Angry";
 		}
 		else if (dispo > 10 && dispo < 40) { // 11 to 39
-			return "Liked";
+			return "Content";
 		}
 		else if (dispo < 1) { // 0-
 			return "Ran Away";
@@ -97,16 +97,16 @@ public class VirtualPet {
 	
 	public void takeNap(int i) {
 		for (int x = i; x!= 0; x--) {
-			energy -= 5;
+			energy += 5;
 			tick();
 		}
 	}
 	
 	public String getEnergy() {
-	if (energy < 11) { // 1 to 10
+	if (energy < 6) { // 5 or less
 		return "Tired";
 	}
-	else if (energy > 10 && energy < 40) { // 11 to 39
+	else if (energy > 5 && energy < 40) { // 11 to 39
 		return "Active";
 	}
 	else { //40 to 50
