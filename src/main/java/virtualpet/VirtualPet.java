@@ -76,7 +76,7 @@ public class VirtualPet {
 	//Determines the lowest value changes it
 	public String selfServe() {
 		dispo -= 5;
-		if ((hunger > (50 - energy)) || (thirst > (50 - energy))){
+		if ((hunger > (49 - energy)) || (thirst > (49 - energy))){
 			if (hunger > thirst) {
 				feedPet(15);
 				return "hungry";
