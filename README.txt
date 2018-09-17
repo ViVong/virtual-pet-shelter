@@ -1,1 +1,1 @@
-A virtual pet you can play with and care for.
+A virtual pet shelter where you can collectively feed, water, and play with your pets as well as admit new pets and adopt existing pets.
