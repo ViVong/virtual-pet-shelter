@@ -26,7 +26,7 @@ public class VirtualPet {
 	}
 	
 	//Methods affecting hunger
-	public void feedPet(int i) {
+	public void feedPet() {
 		hunger -= 4;
 	}
 	
@@ -48,7 +48,7 @@ public class VirtualPet {
 	 dispo += 10;
 	}
 	
-	public int getDispoNum() {
+	public int getDispo() {
 		return dispo;
 	}
 	
