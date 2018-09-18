@@ -5,17 +5,19 @@ import java.util.Map;
 public class VirtualPetShelter {
 	HashMap<String, VirtualPet> shelter = new HashMap<String, VirtualPet>();
 	
-	public void allPets() {
+	public HashMap<String, VirtualPet> allPets() {
 		System.out.println("\nName\t| Hunger | Thirst | Mood |");
 		System.out.println("--------|--------|--------|------|");
 		for (Map.Entry<String, VirtualPet> entry: shelter.entrySet()) {
 			System.out.println(entry.getValue().name + "\t| " + entry.getValue().getHunger() + "\t | " + entry.getValue().getThirst() + "\t  | " + entry.getValue().getDispo() + "\t |");
 		}
+		return shelter;
 	}
-	public void onePet(String name) {
-		System.out.println("\nName\t| Hunger | Thirst | Mood |");
-		System.out.println("--------|--------|--------|------|");
-		System.out.println(shelter.get(name).name + "\t| " + shelter.get(name).getHunger() + "\t | " + shelter.get(name).getThirst() + "\t  | " + shelter.get(name).getDispo() + "\t |");
+	public VirtualPet onePet(String name) {
+//		System.out.println("\nName\t| Hunger | Thirst | Mood |");
+//		System.out.println("--------|--------|--------|------|");
+//		System.out.println(shelter.get(name).name + "\t| " + shelter.get(name).getHunger() + "\t | " + shelter.get(name).getThirst() + "\t  | " + shelter.get(name).getDispo() + "\t |");
+		return shelter.get(name);
 	}
 	public void feedPets() {
 		for (Map.Entry<String, VirtualPet> entry: shelter.entrySet()) {
