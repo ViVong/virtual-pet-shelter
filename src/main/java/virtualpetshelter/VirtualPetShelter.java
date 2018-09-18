@@ -42,6 +42,8 @@ public class VirtualPetShelter {
 		shelter.put(newPet.name, newPet);
 	}
 	public void tick() {
-		
+		for (Map.Entry<String, VirtualPet> entry: shelter.entrySet()) {
+			entry.getValue().tick();
+		}
 	}
 }

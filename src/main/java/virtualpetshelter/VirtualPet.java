@@ -27,7 +27,7 @@ public class VirtualPet {
 	
 	//Methods affecting hunger
 	public void feedPet() {
-		hunger -= 4;
+		hunger -= 5;
 	}
 	
 	public int getHunger() {
@@ -36,7 +36,7 @@ public class VirtualPet {
 	
 	//Methods affecting thirst
 	public void giveWater() {
-		thirst -= 4;
+		thirst -= 5;
 	}
 	
 	public int getThirst() {
@@ -63,16 +63,22 @@ public class VirtualPet {
 	//tick method
 	public void tick() {
 		if (hunger > 0) {
-			hunger += 3;
+			hunger += 2;
 		}
 		else {
 			hunger = 0;
 		}
 		if (thirst > 0) {
-			thirst += 5;
+			thirst += 3;
 		}
 		else {
 			thirst = 0;
+		}
+		if (dispo > 0) {
+			dispo --;
+		}
+		else {
+			dispo = 0;
 		}
 	}
 }
