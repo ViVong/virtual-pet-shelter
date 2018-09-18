@@ -6,10 +6,10 @@ public class VirtualPetShelter {
 	HashMap<String, VirtualPet> shelter = new HashMap<String, VirtualPet>();
 	
 	public HashMap<String, VirtualPet> allPets() {
-		System.out.println("\nName\t| Hunger | Thirst | Mood |");
-		System.out.println("--------|--------|--------|------|");
+		System.out.println("\nName\t| Hunger | Thirst | Mood | Cleaniness |");
+		System.out.println("--------|--------|--------|------|------------|");
 		for (Map.Entry<String, VirtualPet> entry: shelter.entrySet()) {
-			System.out.println(entry.getValue().name + "\t| " + entry.getValue().getHunger() + "\t | " + entry.getValue().getThirst() + "\t  | " + entry.getValue().getDispo() + "\t |");
+			System.out.println(entry.getValue().name + "\t| " + entry.getValue().getHunger() + "\t | " + entry.getValue().getThirst() + "\t  | " + entry.getValue().getDispo() + "\t | " + entry.getValue().getClean() + "\t      |");
 		}
 		return shelter;
 	}
@@ -31,6 +31,9 @@ public class VirtualPetShelter {
 	}
 	public void playWith(String name) {
 		shelter.get(name).playWith();
+	}
+	public void cleanCage(String name) {
+		shelter.get(name).cleanCage();
 	}
 	public void adopt(String name) {
 		shelter.remove(name);

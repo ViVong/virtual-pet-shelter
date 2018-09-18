@@ -54,7 +54,7 @@ public class VirtualPet {
 	
 	//Increases energy & returns energy value
 	public void cleanCage() {
-		clean += 5;
+		clean += 40;
 	}
 	public int getClean() {
 		return clean;
@@ -79,6 +79,12 @@ public class VirtualPet {
 		}
 		else {
 			dispo = 0;
+		}
+		if (clean > 0) {
+			clean -= 5;
+		}
+		else {
+			clean = 0;
 		}
 	}
 }

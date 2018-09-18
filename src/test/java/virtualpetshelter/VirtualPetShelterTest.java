@@ -54,6 +54,16 @@ public class VirtualPetShelterTest {
 		}
 		
 		@Test
+		public void shouldCleanPetPen() {
+			VirtualPetShelter test = new VirtualPetShelter();
+			test.admit("Fido", "a fine pupper.");
+			test.admit("Diaper", "a stinky doggo.", 93, 12, 1);
+			test.cleanCage("Fido");
+			assertEquals(test.onePet("Fido").getClean(), 90);
+			assertEquals(test.onePet("Diaper").getClean(), 50);
+		}
+		
+		@Test
 		public void shouldTickAllPets() {
 			VirtualPetShelter test = new VirtualPetShelter();
 			test.admit("Fido", "a fine pupper.");
