@@ -16,9 +16,6 @@ public class VirtualPetShelter {
 		return shelter;
 	}
 	public VirtualPet onePet(String name) {
-//		System.out.println("\nName\t| Hunger | Thirst | Mood |");
-//		System.out.println("--------|--------|--------|------|");
-//		System.out.println(shelter.get(name).name + "\t| " + shelter.get(name).getHunger() + "\t | " + shelter.get(name).getThirst() + "\t  | " + shelter.get(name).getDispo() + "\t |");
 		return shelter.get(name);
 	}
 	public void feedPets() {
